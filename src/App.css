@@ -1,7 +1,15 @@
+body {
+  background: #efead88f;
+}
 header {
   font-size: 60px;
   margin-bottom: 50px;
+  font-style: bold;
+}
+a {
+  color: #6d8b74;
 }
 .container {
   margin-top: 100px;
+  color: #4e6d52;
 }

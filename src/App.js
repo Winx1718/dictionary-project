@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <header className="App-header">Dictionary</header>
-        <Search />
+        <Search defaultKeyWord="forest" />
         <footer className="text-center">
           Open-source{" "}
           <a
