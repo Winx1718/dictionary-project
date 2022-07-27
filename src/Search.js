@@ -2,18 +2,29 @@ import React, { useState } from "react";
 import "./Search.css";
 import Results from "./Results";
 import axios from "axios";
+import Photos from "./Photos";
 
 export default function Search(props) {
   let [keyWord, setKeyWord] = useState(props.defaultKeyWord);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
+  let [photos, SetPhotos] = useState(null);
 
-  function handleResponse(response) {
+  function handleDictionaryResponse(response) {
     setResults(response.data[0]);
   }
+  function handlePexelsResponse(response) {
+    SetPhotos(response.data.photos);
+  }
   function locate() {
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyWord}`;
-    axios.get(apiUrl).then(handleResponse);
+    const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyWord}`;
+    axios.get(apiUrl).then(handleDictionaryResponse);
+
+    const pexelsApiKey =
+      "563492ad6f91700001000001e440be1bc2a1427283eb5dc5255fb71f";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyWord}&per_page=9`;
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
   function handleSubmit(event) {
     event.preventDefault();
@@ -39,9 +50,12 @@ export default function Search(props) {
               defaultValue={props.defaultKeyWord}
             />
           </form>
-          <div className="hint">Suggested words: camping, hiking, nature...</div>
+          <div className="hint">
+            Suggested words: camping, hiking, nature...
+          </div>
         </section>
         <Results results={results} />
+        <Photos photos={photos} />
       </div>
     );
   } else {
