@@ -1,10 +1,19 @@
 body {
-  background: #efead88f;
+  background: #94b4a471;
 }
 header {
-  font-size: 60px;
   margin-bottom: 50px;
+  padding: 85px;
+  background-image: url("./forest.png");
+  background-position: 20% 40%;
+  border-radius: 6px;
+}
+h1 {
+  font-size: 60px;
   font-style: bold;
+  position: relative;
+  top: -25px;
+  color: #1f322e;
 }
 a {
   color: #6d8b74;

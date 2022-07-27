@@ -30,6 +30,7 @@ export default function Search(props) {
     return (
       <div className="search">
         <section>
+          <h3>What word would you like to look up?</h3>
           <form onSubmit={handleSubmit}>
             <input
               type="search"
@@ -38,7 +39,7 @@ export default function Search(props) {
               defaultValue={props.defaultKeyWord}
             />
           </form>
-          <div className="hint">Suggested words: tennis, coffee, hiking, beer...</div>
+          <div className="hint">Suggested words: camping, hiking, nature...</div>
         </section>
         <Results results={results} />
       </div>
