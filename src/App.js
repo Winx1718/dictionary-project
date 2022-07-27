@@ -18,7 +18,14 @@ export default function App() {
           >
             code
           </a>{" "}
-          by Layna Moore
+          by{" "}
+          <a
+            href="https://www.laynamoore.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Layna Moore
+          </a>
         </footer>
       </div>
     </div>
