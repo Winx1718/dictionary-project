@@ -1,3 +1,10 @@
+Title: Dictionary Application
+
+Description: 
+This is a online dictionary built with HTML5, CSS3, BootStrap, and React.js. You can search for many English words in the search bar. The app will then pull definitions, synonyms, phonetics, parts of speach, and examples of the word from [Free Disctionary API](https://dictionaryapi.dev/). It will also render images of the give word from [Pexels](https://www.pexels.com/api/). 
+
+Run the APP: The App is hosted on Netlify and can be opened with the following [https://clinquant-trifle-8baf48.netlify.app/](https://clinquant-trifle-8baf48.netlify.app/) link.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
